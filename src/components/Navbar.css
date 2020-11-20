@@ -26,7 +26,7 @@
 }
 
 .nav-menu.active{
-    left: -10;
+    left: 0;
     transition: 350ms;
 }
 
@@ -46,7 +46,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 16px 80px;
     border-radius: 4px;
 }
 
@@ -64,9 +64,9 @@
     height: 80px;
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items:center;
 }
 
 span{
-    margin-left: 11px;
+    margin-left: 20px;
 }
