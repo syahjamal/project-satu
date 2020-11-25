@@ -13,6 +13,15 @@
     background: none;
 }
 
+.nav-bars{
+    right: 2rem;
+    font-size: 2rem;
+    background: none;
+    position: absolute;
+
+}
+
+
 .nav-menu{
     background-color: #060b26;
     width: 250px;
