@@ -6,8 +6,10 @@ import {SidebarData} from './SidebarData';
 import './Navbar.css';
 import {IconContext} from 'react-icons';
 import {NavbarItems} from './NavbarData';
+import tombol from '../Tombol';
 
 function Navbar() {
+
     const [sidebar, setSidebar] = useState(false)
 
     const showSidebar = () => setSidebar(!sidebar);
@@ -18,14 +20,14 @@ function Navbar() {
               <Link to ='#' className='menu-bars'>
                 <FaIcons.FaBars onClick={showSidebar}/>
               </Link>
-              <Link to ='/upload' className='nav-bars'>
-                <FaIcons.FaUpload onClick={showSidebar}/>
+              <Link to ='/file' className='nav-bars'>
+                <FaIcons.FaUpload onClick={tombol.handleClick}/>
               </Link>
               
           </div>
     
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-              <ul classNmae='nav-menu-items' onClick={showSidebar}>
+              <ul className='nav-menu-items' onClick={showSidebar}>
                   <li className="navbar-toggle">
                       <Link to="#" className='menu-bars'>
                           <AiIcons.AiOutlineClose/>
