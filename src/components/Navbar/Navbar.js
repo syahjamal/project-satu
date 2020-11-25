@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {SidebarData} from './SidebarData';
 import './Navbar.css';
 import {IconContext} from 'react-icons';
+import {NavbarItems} from './NavbarData';
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
@@ -17,7 +18,12 @@ function Navbar() {
               <Link to ='#' className='menu-bars'>
                 <FaIcons.FaBars onClick={showSidebar}/>
               </Link>
+              <Link to ='/upload' className='nav-bars'>
+                <FaIcons.FaUpload onClick={showSidebar}/>
+              </Link>
+              
           </div>
+    
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
               <ul classNmae='nav-menu-items' onClick={showSidebar}>
                   <li className="navbar-toggle">
@@ -38,6 +44,7 @@ function Navbar() {
               </ul>
           </nav>
           </IconContext.Provider>
+          
         </>
     );
 }
