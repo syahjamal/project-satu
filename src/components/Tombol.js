@@ -16,8 +16,10 @@ class Tombol extends Component{
     }
 
     handleClick = async () =>{
-        api.get('/file').then(
+        api.get('/').then(
             res => {console.log("error :" + res)}
+            ).then(
+                alert('Press ok to proceed')
             )
     }
   
