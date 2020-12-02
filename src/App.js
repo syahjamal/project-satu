@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Reports from './pages/Reports';
 import Products from './pages/Products';
 import LoginForm from './components/LoginForm/LoginForm';
+import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 // import axios from "axios";
 
 
@@ -17,11 +18,9 @@ function App () {
     <>
     <Router>
     <Route path="/login" component={LoginForm}/>
+    <Route path="/register" component={RegistrationForm}/>
         {/* <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
     </Route> */}
-   
-    </Router>
-    <Router>
    
     <Switch>
       <Route path='/' exact component={Home}/>

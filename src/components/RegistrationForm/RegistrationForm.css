@@ -8,3 +8,12 @@
     color: green;
     font-weight: bold;
 }
+
+  
+.container-register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: cadetblue; */
+    }

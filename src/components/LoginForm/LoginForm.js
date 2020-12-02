@@ -51,15 +51,15 @@ function LoginForm(props) {
             });
     }
     const redirectToHome = () => {
-        props.updateTitle('Home')
+        // props.updateTitle('Home')
         props.history.push('/');
     }
     const redirectToRegister = () => {
         props.history.push('/register'); 
-        props.updateTitle('Register');
+        // props.updateTitle('Register');
     }
     return(
-        <div className='container'>
+        <div className='container container-login'>
         <div className=" card col-12 col-lg-4 login-card d-flex justify-content-center align-items-center">
             <h1>Login</h1>
             <form>
