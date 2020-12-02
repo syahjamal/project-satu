@@ -16,13 +16,13 @@ function App () {
   return(
     <>
     <Router>
-    <Route path="/login" component={LoginForm} />
+    <Route path="/login" component={LoginForm}/>
         {/* <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
     </Route> */}
    
     </Router>
     <Router>
-    <Navbar/>
+   
     <Switch>
       <Route path='/' exact component={Home}/>
       <Route path='/reports' component={Reports}/>
