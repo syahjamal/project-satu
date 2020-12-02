@@ -55,7 +55,8 @@ function LoginForm(props) {
     //     props.updateTitle('Register');
     // }
     return(
-        <div className="card col-12 col-lg-4 login-card mt-2 justify-content-center">
+        <div className=" card col-12 col-lg-4 login-card d-flex justify-content-center align-items-center">
+            <h1>Login</h1>
             <form>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Email address</label>
