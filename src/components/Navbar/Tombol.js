@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL:'http://localhost:8081'
+    baseURL:'http://localhost:8080'
 })
 
 
@@ -16,7 +16,7 @@ class Tombol extends Component{
     }
 
     handleClick = async () =>{
-        api.get('/').then(
+        api.get('/file').then(
             res => {console.log("error :" + res)}
             ).then(
                 alert('Press ok to proceed')
