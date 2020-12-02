@@ -54,10 +54,10 @@ function LoginForm(props) {
         props.updateTitle('Home')
         props.history.push('/');
     }
-    // const redirectToRegister = () => {
-    //     props.history.push('/register'); 
-    //     props.updateTitle('Register');
-    // }
+    const redirectToRegister = () => {
+        props.history.push('/register'); 
+        props.updateTitle('Register');
+    }
     return(
         <div className='container'>
         <div className=" card col-12 col-lg-4 login-card d-flex justify-content-center align-items-center">
@@ -96,10 +96,10 @@ function LoginForm(props) {
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
-            {/* <div className="registerMessage">
+            <div className="registerMessage">
                 <span>Dont have an account? </span>
                 <span className="loginText" onClick={() => redirectToRegister()}>Register</span> 
-            </div> */}
+            </div>
         </div>
         </div>
     )
