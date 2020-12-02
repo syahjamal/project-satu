@@ -16,14 +16,18 @@ function App () {
   return(
     <>
     <Router>
+    <Route path="/login" component={LoginForm} />
+        {/* <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
+    </Route> */}
+   
+    </Router>
+    <Router>
     <Navbar/>
     <Switch>
       <Route path='/' exact component={Home}/>
       <Route path='/reports' component={Reports}/>
       <Route path='/products' component={Products}/>
-      <Route path="/login">
-        <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
-      </Route>
+     
     </Switch>
     </Router>
     
