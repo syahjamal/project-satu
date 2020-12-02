@@ -6,7 +6,7 @@ import {SidebarData} from './SidebarData';
 import './Navbar.css';
 import {IconContext} from 'react-icons';
 import {NavbarItems} from './NavbarData';
-import tombol from '../Tombol';
+import tombol from './Tombol';
 
 function Navbar() {
 
