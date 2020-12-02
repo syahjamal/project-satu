@@ -5,6 +5,10 @@ import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../constants/apiConstants';
 import { withRouter } from "react-router-dom";
 
 function LoginForm(props) {
+    const api = axios.create({
+        baseURL:'http://localhost:8080'
+    })
+
     const [state , setState] = useState({
         email : "",
         password : "",
@@ -24,7 +28,7 @@ function LoginForm(props) {
             "email":state.email,
             "password":state.password,
         }
-        axios.post(API_BASE_URL+'/user/login', payload)
+        axios.post(api+'/user/login', payload)
             .then(function (response) {
                 if(response.status === 200){
                     setState(prevState => ({
@@ -55,6 +59,7 @@ function LoginForm(props) {
     //     props.updateTitle('Register');
     // }
     return(
+        <div className='container'>
         <div className=" card col-12 col-lg-4 login-card d-flex justify-content-center align-items-center">
             <h1>Login</h1>
             <form>
@@ -95,6 +100,7 @@ function LoginForm(props) {
                 <span>Dont have an account? </span>
                 <span className="loginText" onClick={() => redirectToRegister()}>Register</span> 
             </div> */}
+        </div>
         </div>
     )
 }
