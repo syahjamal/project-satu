@@ -3,7 +3,7 @@ import axios from 'axios';
 import './LoginForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../constants/apiConstants';
 import { withRouter } from "react-router-dom";
-import background from '../../images/cele.png';
+import background from '../../images/member_celerates.jpg';
 
 function LoginForm(props) {
     const api = axios.create({
@@ -66,7 +66,7 @@ function LoginForm(props) {
             <h1>Login</h1>
             <form>
                 <div className="form-group text-left">
-                <label htmlFor="exampleInputEmail1">Email address</label>
+                <label htmlFor="exampleInputEmail1"></label>
                 <input type="email" 
                        className="form-control" 
                        id="email" 
@@ -75,10 +75,10 @@ function LoginForm(props) {
                        value={state.email}
                        onChange={handleChange}
                 />
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small id="emailHelp" className="form-text text-muted"></small>
                 </div>
                 <div className="form-group text-left">
-                <label htmlFor="exampleInputPassword1">Password</label>
+                <label htmlFor="exampleInputPassword1"></label>
                 <input type="password" 
                        className="form-control" 
                        id="password" 
@@ -91,16 +91,16 @@ function LoginForm(props) {
                 </div>
                 <button 
                     type="submit" 
-                    className="btn btn-primary"
+                    className="btn btn-warning"
                     onClick={handleSubmitClick}
-                >Submit</button>
+                >Login</button>
             </form>
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
             <div className="registerMessage">
                 <span>Dont have an account? </span>
-                <span className="loginText" onClick={() => redirectToRegister()}>Register</span> 
+                <span className="loginText text-warning" onClick={() => redirectToRegister()}>Register</span> 
             </div>
         </div>
         </div>
