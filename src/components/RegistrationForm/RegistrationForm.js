@@ -3,7 +3,7 @@ import axios from 'axios';
 import './RegistrationForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../constants/apiConstants';
 import { withRouter } from "react-router-dom";
-import background from '../../images/cele.png';
+import background from '../../images/member_celerates.jpg';
 import { FaSatellite } from 'react-icons/fa';
 
 function RegistrationForm(props) {
@@ -70,7 +70,7 @@ function RegistrationForm(props) {
     return(
         <div className='container-register'>
              <div className='col-12 col-lg-8'><img src={background} alt="" /></div>
-            <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+            <div className="card col-12 col-lg-4 login-card hv-center">
                 <h2>Account Register</h2>
                 <form>
                     <div className="form-group text-left">
@@ -118,7 +118,7 @@ function RegistrationForm(props) {
                     </div>
                     <button 
                         type="submit" 
-                        className="btn btn-primary"
+                        className="btn btn-warning"
                         onClick={handleSubmitClick}
                     >
                         Register
@@ -128,8 +128,8 @@ function RegistrationForm(props) {
                     {state.successMessage}
                 </div>
                 <div className="mt-2">
-                    <span>Already have an account? </span>
-                    <span className="loginText" onClick={() => redirectToLogin()}>Login here</span> 
+                    <span>Already have an account?</span>
+                    <span className="loginText text-warning" onClick={() => redirectToLogin()}>Login here</span> 
                 </div>
                 
             </div>

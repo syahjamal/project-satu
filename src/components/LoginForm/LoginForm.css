@@ -21,7 +21,7 @@ align-items: center;
 .container-login{
 display: flex;
 justify-content: center;
-align-items: center;
+/* align-items: center; */
 height: 100vh;
     /* background-image: url('../../images/cele.png'); */
     /* background-color: cadetblue; */
@@ -29,9 +29,13 @@ height: 100vh;
 
 .card{
     border: 0px solid rgba(0,0,0,0);
+    justify-content: center;
 }
 
 img{
-    width: inherit;
-    height: inherit;
+    /* width: fit-content; */
+    height: 100%;
+    position: absolute;
+    left: -8em;
+
 }
