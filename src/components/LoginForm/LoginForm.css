@@ -1,5 +1,6 @@
 .login-card {
     min-height: 60vh;
+    padding: 1.5em ;
 }
 
 .registerMessage {
@@ -7,19 +8,29 @@
 }
 
 .App {
-    text-align: center;
-  }
-  
-  .hv-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .container-login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+text-align: center;
+}
+
+.hv-center {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container-login{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+    /* background-image: url('../../images/cele.png'); */
     /* background-color: cadetblue; */
-    }
+}
+
+.card{
+    border: 0px solid rgba(0,0,0,0);
+}
+
+img{
+    width: inherit;
+    height: inherit;
+}

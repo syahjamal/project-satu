@@ -3,6 +3,7 @@ import axios from 'axios';
 import './LoginForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../constants/apiConstants';
 import { withRouter } from "react-router-dom";
+import background from '../../images/cele.png';
 
 function LoginForm(props) {
     const api = axios.create({
@@ -59,8 +60,9 @@ function LoginForm(props) {
         // props.updateTitle('Register');
     }
     return(
-        <div className='container container-login'>
-        <div className=" card col-12 col-lg-4 login-card d-flex justify-content-center align-items-center">
+        <div className='container-login'>
+        <div className='col-12 col-lg-8'><img src={background} alt="" /></div>
+        <div className=" card col-12 col-lg-4 login-card d-flex justify-content-reverse align-items-center">
             <h1>Login</h1>
             <form>
                 <div className="form-group text-left">

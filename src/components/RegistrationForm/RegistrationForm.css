@@ -16,4 +16,13 @@
     align-items: center;
     height: 100vh;
     /* background-color: cadetblue; */
-    }
+}
+
+.card{
+    border: 0px solid rgba(0,0,0,0);
+}
+
+img{
+    width: inherit;
+    height: inherit;
+}

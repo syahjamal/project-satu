@@ -3,9 +3,12 @@ import axios from 'axios';
 import './RegistrationForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../constants/apiConstants';
 import { withRouter } from "react-router-dom";
+import background from '../../images/cele.png';
+import { FaSatellite } from 'react-icons/fa';
 
 function RegistrationForm(props) {
     const [state , setState] = useState({
+        nickname:"",
         email : "",
         password : "",
         confirmPassword: "",
@@ -22,6 +25,7 @@ function RegistrationForm(props) {
         if(state.email.length && state.password.length) {
             props.showError(null);
             const payload={
+                "nickname": FaSatellite.nickname,
                 "email":state.email,
                 "password":state.password,
             }
@@ -65,20 +69,32 @@ function RegistrationForm(props) {
     }
     return(
         <div className='container-register'>
+             <div className='col-12 col-lg-8'><img src={background} alt="" /></div>
             <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-                <h1>Account Register</h1>
+                <h2>Account Register</h2>
                 <form>
                     <div className="form-group text-left">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input type="email" 
-                        className="form-control" 
-                        id="email" 
-                        aria-describedby="emailHelp" 
-                        placeholder="Enter email" 
-                        value={state.email}
-                        onChange={handleChange}
-                    />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label htmlFor="exampleNickname">Nickname</label>
+                        <input type="nickname" 
+                            className="form-control" 
+                            id="nickname" 
+                            aria-describedby="nicknameHelp" 
+                            placeholder="Enter nickname" 
+                            value={state.nickname}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="form-group text-left">
+                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <input type="email" 
+                            className="form-control" 
+                            id="email" 
+                            aria-describedby="emailHelp" 
+                            placeholder="Enter email" 
+                            value={state.email}
+                            onChange={handleChange}
+                        />
+                        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div className="form-group text-left">
                         <label htmlFor="exampleInputPassword1">Password</label>
