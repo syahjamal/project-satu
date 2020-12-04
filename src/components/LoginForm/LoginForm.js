@@ -7,7 +7,12 @@ import background from '../../images/member_celerates.jpg';
 
 function LoginForm(props) {
     const api = axios.create({
-        baseURL:'http://localhost:8080'
+        baseURL:'http://localhost:8080',
+        headers: {"Access-Control-Allow-Origin": "*", 
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+
     })
 
     const [state , setState] = useState({
@@ -29,8 +34,8 @@ function LoginForm(props) {
             "email":state.email,
             "password":state.password,
         }
-        axios.post(api+'/user/login', payload)
-            .then(function (response) {
+        axios.post(api+'/login', payload)
+        .then(function (response) {
                 if(response.status === 200){
                     setState(prevState => ({
                         ...prevState,
@@ -47,10 +52,12 @@ function LoginForm(props) {
                     props.showError("Username does not exists");
                 }
             })
-            .catch(function (error) {
-                console.log(error);
-            });
+            // .catch(function (error) {
+            //     console.log(error);
+            // });
+          
     }
+
     const redirectToHome = () => {
         // props.updateTitle('Home')
         props.history.push('/');
