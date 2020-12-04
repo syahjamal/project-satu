@@ -6,14 +6,14 @@ import { withRouter } from "react-router-dom";
 import background from '../../images/member_celerates.jpg';
 
 function LoginForm(props) {
-    const api = axios.create({
-        baseURL:'http://localhost:8080',
-        headers: {"Access-Control-Allow-Origin": "*", 
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        },
+    // const api = axios.create({
+    //     baseURL:'http://localhost:8080',
+    //     headers: {"Access-Control-Allow-Origin": "*", 
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //     },
 
-    })
+    // })
 
     const [state , setState] = useState({
         email : "",
@@ -34,7 +34,7 @@ function LoginForm(props) {
             "email":state.email,
             "password":state.password,
         }
-        axios.post(api+'/login', payload)
+        axios.post(API_BASE_URL+'/login', payload)
         .then(function (response) {
                 if(response.status === 200){
                     setState(prevState => ({
@@ -52,9 +52,9 @@ function LoginForm(props) {
                     props.showError("Username does not exists");
                 }
             })
-            // .catch(function (error) {
-            //     console.log(error);
-            // });
+            .catch(function (error) {
+                console.log(error);
+            });
           
     }
 
