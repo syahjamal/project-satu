@@ -19,7 +19,8 @@ function App () {
 
         {/* <LoginForm showError={updateErrorMessage} updateTitle={updateTitle}/>
     </Route> */}
-   
+
+    
     <Switch>
       
       <PrivateRoute path='/' exact component={Home}/>
