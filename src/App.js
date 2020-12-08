@@ -7,6 +7,7 @@ import Products from './pages/Products';
 import LoginForm from './components/LoginForm/LoginForm';
 import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 import PrivateRoute from './components/PrivateRoute';
+
 // import axios from "axios";
 
 
@@ -23,12 +24,12 @@ function App () {
     
     <Switch>
       
-      <PrivateRoute path='/' exact component={Home}/>
-      <PrivateRoute path='/reports' component={Reports}/>
-      <PrivateRoute path='/products' component={Products}/>
+      <Route path='/' exact component={Home}/>
+      <Route path='/reports' component={Reports}/>
+      <Route path='/products' component={Products}/>
       <Route path="/login" component={LoginForm}/>
       <Route path="/register" component={RegistrationForm}/>
-     
+
     </Switch>
     </Router>
     

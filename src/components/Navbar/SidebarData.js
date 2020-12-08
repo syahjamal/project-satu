@@ -11,35 +11,35 @@ export const SidebarData=[
      cName: 'nav-text'
     },
     {
-        title: 'Reports',
+        title: 'Autorization',
         path: '/reports',
         icon: <IoIcons.IoIosPaper/>,
         cName: 'nav-text'
     },
     {
-        title: 'Products',
+        title: 'Setting',
         path: '/products',
         icon: <FaIcons.FaCartPlus/>,
         cName: 'nav-text'
     },
     {
-        title: 'Team',
+        title: 'Transaction',
         path: '/team',
         icon: <IoIcons.IoMdPeople/>,
         cName: 'nav-text'
     },
-    {
-        title: 'Message',
-        path: '/messages',
-        icon: <FaIcons.FaEnvelopeOpen/>,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Support',
-        path: '/support',
-        icon: <IoIcons.IoMdHelpCircle/>,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Message',
+    //     path: '/messages',
+    //     icon: <FaIcons.FaEnvelopeOpen/>,
+    //     cName: 'nav-text'
+    // },
+    // {
+    //     title: 'Support',
+    //     path: '/support',
+    //     icon: <IoIcons.IoMdHelpCircle/>,
+    //     cName: 'nav-text'
+    // },
 
        
 
