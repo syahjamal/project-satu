@@ -6,14 +6,14 @@ import { withRouter } from "react-router-dom";
 import background from '../../images/member_celerates.jpg';
 
 function LoginForm(props) {
-    // const api = axios.create({
-    //     baseURL:'http://localhost:8080',
-    //     headers: {"Access-Control-Allow-Origin": "*", 
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //     },
-
-    // })
+    const headers = {
+        'User-Agent': 'Console app',
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json', 
+        // 'Accept': 'application/json',
+            
+    }
 
     const [state , setState] = useState({
         email : "",
@@ -34,27 +34,30 @@ function LoginForm(props) {
             "email":state.email,
             "password":state.password,
         }
-        axios.post(API_BASE_URL+'/login', payload)
+        console.log(payload)
+
+        axios.post('http://localhost:8080/login', payload, headers)  
         .then(function (response) {
-                if(response.status === 200){
-                    setState(prevState => ({
-                        ...prevState,
-                        'successMessage' : 'Login successful. Redirecting to home page..'
-                    }))
-                    localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
-                    redirectToHome();
-                    props.showError(null)
-                }
-                else if(response.code === 204){
-                    props.showError("Username and password do not match");
-                }
-                else{
-                    props.showError("Username does not exists");
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+            console.log(response)
+            if(response.status === 200){
+                setState(prevState => ({
+                    ...prevState,
+                    'successMessage' : 'Login successful. Redirecting to home page..'
+                }))
+                // localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
+                redirectToHome();
+                props.showError(null)
+            }
+            else if(response.code === 204){
+                props.showError("Username and password do not match");
+            }
+            else{
+                props.showError("Username does not exists");
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
           
     }
 
@@ -105,10 +108,10 @@ function LoginForm(props) {
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
-            <div className="registerMessage">
+            {/* <div className="registerMessage">
                 <span>Dont have an account? </span>
                 <span className="loginText text-warning" onClick={() => redirectToRegister()}>Register</span> 
-            </div>
+            </div> */}
         </div>
         </div>
     )
