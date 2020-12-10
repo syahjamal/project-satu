@@ -7,6 +7,7 @@ import './Navbar.css';
 import {IconContext} from 'react-icons';
 import {NavbarItems} from './NavbarData';
 import tombol from './Tombol';
+import Logout from './Logout';
 
 function Navbar() {
 
@@ -20,23 +21,23 @@ function Navbar() {
               <Link to ='#' className='menu-bars'>
                 <FaIcons.FaBars onClick={showSidebar}/>
               </Link>
-              <Link to ='/file' className='nav-bars'>
+              {/* <Link to ='/file' className='nav-bars'>
                 <FaIcons.FaUpload onClick={tombol.handleClick}/>
-              </Link>
-              
+              </Link> */}
+              <Link className='nav-logout'><Logout /></Link>  
           </div>
     
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
               <ul className='nav-menu-items' onClick={showSidebar}>
                   <li className="navbar-toggle">
                       <Link to="#" className='menu-bars'>
-                          <p>Celerates<span className='close'> X</span></p>
+                          <p>Celerates<span className='close-light'> X</span></p>
                       </Link>
                   </li>
                   {SidebarData.map((item, index) => {
                       return (
                           <li key={index} className={item.cName}>
-                              <Link to={item.path}>
+                              <Link to={item.path} onClick={item.event}>
                                   {item.icon}
                                   <span>{item.title}</span>
                               </Link>

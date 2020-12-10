@@ -7,6 +7,15 @@ import background from '../../images/member_celerates.jpg';
 import { FaSatellite } from 'react-icons/fa';
 
 function RegistrationForm(props) {
+    const headers = {
+        'User-Agent': 'Console app',
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json', 
+        // 'Accept': 'application/json',
+            
+    }
+
     const [state , setState] = useState({
         nickname:"",
         email : "",
@@ -23,20 +32,20 @@ function RegistrationForm(props) {
     }
     const sendDetailsToServer = () => {
         if(state.email.length && state.password.length) {
-            props.showError(null);
+            // props.showError(null);
             const payload={
                 "nickname": FaSatellite.nickname,
                 "email":state.email,
                 "password":state.password,
             }
-            axios.post(API_BASE_URL+'/user/register', payload)
+            axios.post('http://localhost:8080/register', payload,headers)
                 .then(function (response) {
                     if(response.status === 200){
                         setState(prevState => ({
                             ...prevState,
                             'successMessage' : 'Registration successful. Redirecting to home page..'
                         }))
-                        localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
+                        localStorage.setItem(ACCESS_TOKEN_NAME,response.data);
                         redirectToHome();
                         props.showError(null)
                     } else{

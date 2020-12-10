@@ -34,7 +34,7 @@ function LoginForm(props) {
             "email":state.email,
             "password":state.password,
         }
-        console.log(payload)
+        // console.log(payload)
 
         axios.post('http://localhost:8080/login', payload, headers)  
         .then(function (response) {
@@ -44,7 +44,7 @@ function LoginForm(props) {
                     ...prevState,
                     'successMessage' : 'Login successful. Redirecting to home page..'
                 }))
-                localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
+                localStorage.setItem(ACCESS_TOKEN_NAME,response.data);
                 redirectToHome();
                 // props.showError(null)
             }
@@ -108,10 +108,10 @@ function LoginForm(props) {
             <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
                 {state.successMessage}
             </div>
-            {/* <div className="registerMessage">
+            <div className="registerMessage">
                 <span>Dont have an account? </span>
                 <span className="loginText text-warning" onClick={() => redirectToRegister()}>Register</span> 
-            </div> */}
+            </div>
         </div>
         </div>
     )

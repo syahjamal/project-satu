@@ -2,6 +2,7 @@ import React from 'react'
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
+import tombol from './Tombol';
 
 export const SidebarData=[
     {
@@ -13,20 +14,21 @@ export const SidebarData=[
     {
         title: 'Autorization',
         path: '/reports',
-        icon: <IoIcons.IoIosPaper/>,
+        icon: <IoIcons.IoMdPeople/>,
         cName: 'nav-text'
     },
     {
         title: 'Setting',
         path: '/products',
-        icon: <FaIcons.FaCartPlus/>,
+        icon: <FaIcons.FaCogs/>,
         cName: 'nav-text'
     },
     {
         title: 'Transaction',
-        path: '/team',
-        icon: <IoIcons.IoMdPeople/>,
-        cName: 'nav-text'
+        path: '/file',
+        icon: <IoIcons.IoIosPaper/>,
+        cName: 'nav-text',
+        event: tombol.handleClick
     },
     // {
     //     title: 'Message',

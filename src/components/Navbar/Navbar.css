@@ -14,13 +14,20 @@
 }
 
 .nav-bars{
-    right: 2rem;
+    right: 6rem;
     font-size: 2rem;
     background: none;
     position: absolute;
 
 }
 
+.nav-logout{
+    right: 2rem;
+    font-size: 2rem;
+    background: none;
+    position: absolute;
+
+}
 
 .nav-menu{
     background-color: #060b26;
