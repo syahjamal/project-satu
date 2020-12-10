@@ -44,9 +44,9 @@ function LoginForm(props) {
                     ...prevState,
                     'successMessage' : 'Login successful. Redirecting to home page..'
                 }))
-                // localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
+                localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
                 redirectToHome();
-                props.showError(null)
+                // props.showError(null)
             }
             else if(response.code === 204){
                 props.showError("Username and password do not match");
