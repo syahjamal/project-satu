@@ -62,7 +62,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 16px 80px;
+    padding: 16px 10px;
     border-radius: 4px;
 }
 
@@ -87,8 +87,36 @@ span{
     margin-left: 20px;
 }
 
+
 p{
     margin-top: 0;
     /* margin-bottom: 1rem; */
     color: white;
+}
+/* unvisited link */
+Link:link {
+    color: white;
+     text-decoration: none;
+  }
+  
+  /* visited link */
+  Link:visited {
+    color: white;
+     text-decoration: none;
+  }
+  
+  /* mouse over link */
+  Link:hover {
+    color: white;
+     text-decoration: none;
+  }
+  
+  /* selected link */
+  Link:active {
+    color: white;
+     text-decoration: none;
+  }
+
+.close-red{
+    color: red !important;
 }

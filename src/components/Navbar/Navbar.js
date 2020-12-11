@@ -11,7 +11,7 @@ import Logout from './Logout';
 
 function Navbar() {
 
-    const [sidebar, setSidebar] = useState(false)
+    const [sidebar, setSidebar] = useState(true)
 
     const showSidebar = () => setSidebar(!sidebar);
     return (
@@ -30,8 +30,8 @@ function Navbar() {
           <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
               <ul className='nav-menu-items' onClick={showSidebar}>
                   <li className="navbar-toggle">
-                      <Link to="#" className='menu-bars'>
-                          <p>Celerates<span className='close-light'> X</span></p>
+                      <Link to="#" className='menu-bars '>
+                          <p>Celerates<span ><FaIcons.FaTimes className='close-red' /></span></p>
                       </Link>
                   </li>
                   {SidebarData.map((item, index) => {

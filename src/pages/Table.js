@@ -4,6 +4,7 @@ import CRUDTable, { Fields, Field, Pagination, CreateForm, UpdateForm,
     DeleteForm } from "react-crud-table";
 // Component's Base CSS
 import "./Table.css";
+import axios from 'axios';
 
 const styles = {
   container: { margin: "auto", width: "fit-content" }
@@ -61,7 +62,38 @@ const getSorter = data => {
 
   return sorter;
 };
-let count = tasks.length;
+const getAllUsers = () => {
+  // if(state.email.length && state.password.length) {
+      // props.showError(null);
+      // const payload={
+      //     "nickname": state.nickname,
+      //     "email":state.email,
+      //     "password":state.password,
+      // }
+      axios.get('http://localhost:8080/users')
+          .then(function (response) {
+              if(response.status === 200){
+                console.log(response)
+              //     setState(prevState => ({
+              //         ...prevState,
+              //         'successMessage' : 'Registration successful. Redirecting to home page..'
+              //     }))
+              //     // localStorage.setItem(ACCESS_TOKEN_NAME,response.data);
+              //     redirectToHome();
+              //     props.showError(null)
+              // } else{
+              //     props.showError("Some error ocurred");
+              // }
+              }
+            })
+          // .catch(function (error) {
+          //     console.log(error);
+          // });    
+  // } else {
+  //     props.showError('Please enter valid username and password')    
+  }
+
+let count = getAllUsers();
 const service = {
   fetchItems: payload => {
     const { activePage, itemsPerPage } = payload.pagination;
@@ -72,7 +104,7 @@ const service = {
     return Promise.resolve(result.slice(start, end));
   },
   fetchTotal: payload => {
-    return Promise.resolve(tasks.length);
+    return Promise.resolve(getAllUsers);
   }
 };
 

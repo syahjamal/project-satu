@@ -20,7 +20,7 @@ function RegistrationForm(props) {
         nickname:"",
         email : "",
         password : "",
-        confirmPassword: "",
+        // confirmPassword: "",
         successMessage: null
     })
     const handleChange = (e) => {
@@ -34,11 +34,11 @@ function RegistrationForm(props) {
         if(state.email.length && state.password.length) {
             // props.showError(null);
             const payload={
-                "nickname": FaSatellite.nickname,
+                "nickname": state.nickname,
                 "email":state.email,
                 "password":state.password,
             }
-            axios.post('http://localhost:8080/register', payload,headers)
+            axios.post('http://localhost:8080/users', payload, headers)
                 .then(function (response) {
                     if(response.status === 200){
                         setState(prevState => ({
@@ -70,11 +70,12 @@ function RegistrationForm(props) {
     }
     const handleSubmitClick = (e) => {
         e.preventDefault();
-        if(state.password === state.confirmPassword) {
+        // if(state.password === state.confirmPassword) {
             sendDetailsToServer()    
-        } else {
-            props.showError('Passwords do not match');
-        }
+            redirectToLogin()
+        // } else {
+            // props.showError('Passwords do not match');
+        // }
     }
     return(
         <div className='container-register'>
@@ -115,7 +116,7 @@ function RegistrationForm(props) {
                             onChange={handleChange} 
                         />
                     </div>
-                    <div className="form-group text-left">
+                    {/* <div className="form-group text-left">
                         <label htmlFor="exampleInputPassword1">Confirm Password</label>
                         <input type="password" 
                             className="form-control" 
@@ -124,7 +125,7 @@ function RegistrationForm(props) {
                             value={state.confirmPassword}
                             onChange={handleChange} 
                         />
-                    </div>
+                    </div> */}
                     <button 
                         type="submit" 
                         className="btn btn-warning"
